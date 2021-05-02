@@ -3,6 +3,12 @@ const URL = 'https://platzi-avo.vercel.app';
 
 const appNode = document.getElementById('app');
 
+appNode.addEventListener('click', (event) => {
+  if (event.target.className === 'title') {
+    window.alert(`¿Quieres un ${event.target.textContent}?`);
+  }
+});
+
 const formatPrice = (price) => {
   const newPrice = new window.Intl.NumberFormat('en-EN', {
     style: 'currency',
