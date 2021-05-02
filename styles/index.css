@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 3rem;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+header p {
+  margin: 1rem 0;
+  color: gray;
+}
+
+header h3 {
+  color: #8cc83b;
+  text-transform: uppercase;
+}
+
+#app {
+  display: grid;
+  margin: 2rem 10rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  display: flex;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.card:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+img {
+  width: 6rem;
+  border-radius: 50%;
+}
+
+.title {
+  margin: 0;
+}
+
+.price {
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: darkslategray;
+}
+
+.card-content {
+  margin: 0 2rem;
+}
+
+footer {
+  background-color: #121f3d;
+  color: whitesmoke;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #8cc83b;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}

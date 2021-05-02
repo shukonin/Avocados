@@ -1,17 +1,45 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+const API = 'https://platzi-avo.vercel.app/api/avo';
+const URL = 'https://platzi-avo.vercel.app';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const appNode = document.getElementById('app');
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const formatPrice = (price) => {
+  const newPrice = new window.Intl.NumberFormat('en-EN', {
+    style: 'currency',
+    currency: 'USD',
+  }).format(price);
+  return newPrice;
+};
+
+window
+  .fetch(API)
+  .then((response) => response.json())
+  .then((responseJson) => {
+    const items = [];
+    responseJson.data.forEach((element) => {
+      // Crear imagen
+      const imagen = document.createElement('img');
+      imagen.src = `${URL}${element.image}`;
+
+      // Crear título
+      const title = document.createElement('h2');
+      title.textContent = element.name;
+      title.className = 'title';
+
+      // Crear precio
+      const price = document.createElement('p');
+      price.textContent = formatPrice(element.price);
+      price.className = 'price';
+
+      const description = document.createElement('div');
+      description.append(title, price);
+      description.className = 'card-content';
+
+      const container = document.createElement('div');
+      container.append(imagen, description);
+      container.className = 'card';
+
+      items.push(container);
+    });
+    appNode.append(...items);
+  });
