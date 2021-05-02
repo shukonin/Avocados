@@ -22,7 +22,7 @@ window
       imagen.src = `${URL}${element.image}`;
 
       // Crear título
-      const title = document.createElement('h2');
+      const title = document.createElement('p');
       title.textContent = element.name;
       title.className = 'title';
 
