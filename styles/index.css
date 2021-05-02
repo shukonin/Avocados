@@ -44,7 +44,7 @@ header {
 
 img {
   width: 6rem;
-  height: auto;
+  height: 6rem;
   border-radius: 50%;
 }
 
@@ -84,6 +84,7 @@ footer a:hover {
   }
   img {
     width: 4rem;
+    height: 4rem;
   }
 }
 
@@ -94,5 +95,6 @@ footer a:hover {
 
   img {
     width: 2rem;
+    height: 2rem;
   }
 }
