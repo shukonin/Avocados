@@ -44,6 +44,7 @@ header {
 
 img {
   width: 6rem;
+  height: auto;
   border-radius: 50%;
 }
 
@@ -81,10 +82,17 @@ footer a:hover {
   #app {
     margin: 2rem;
   }
+  img {
+    width: 4rem;
+  }
 }
 
 @media screen and (max-width: 680px) {
   #app {
     grid-template-columns: 1fr;
+  }
+
+  img {
+    width: 2rem;
   }
 }
